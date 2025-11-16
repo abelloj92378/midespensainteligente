@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Despensa Inteligente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="bg-light">
+    <!-- Página de Bienvenida -->
+    <section id="pantalla-bienvenida" class="container text-center py-5"><!-- Esto lo agregué para JS-->
+        <h1 class="mb-4 text-success fw-bold">Mi Despensa Inteligente</h1>
+        <p class="mb-5">Registra tus alimentos, controla su fecha de vencimiento y evita el desperdicio.</p>
+        <div>
+            <button class="uno btn btn-success mx-2" onclick="mostrarLogin()">Iniciar Sesión</button>
+            <button class="btn btn-outline-success mx-2" onclick="mostrarRegistro()">Registrarse</button>
+        </div>
+    </section>
+
+    <!-- Ventana Iniciar Sesión -->
+    <div id="pantalla-login" class="overlay"><!-- Esto lo agregué para JS-->
+        <div class="modal-content">
+        <h2>Iniciar Sesión</h2>
+        <form onsubmit="iniciarSesion(event)">
+            <input type="email" id="login-correo" placeholder="correo@electronico" class="form-control mb-3" required>
+            <input type="password" id="login-pass" placeholder="Contraseña" class="form-control mb-3" required>
+            <button type="submit" class="uno btn btn-success w-100 mb-3">Entrar</button>
+            <button type="button" class="btn btn-secondary w-100" onclick="volverInicio()">Volver</button>
+        </form>
+    </div>
+</div>
+
+    <!-- Ventana Registro -->
+    <div id="pantalla-registro" style="display:none;" class="overlay"><!-- Esto lo agregué para JS-->
+        <div class="modal-content">
+        <h2>Registrarse</h2>
+        <form onsubmit="registrarUsuario(event)">
+            <input type="text" id="reg-nombre" placeholder="Nombre completo" class="form-control mb-3" required>
+            <input type="email" id="reg-correo" placeholder="correo@electronico" class="form-control mb-3" required>
+            <input type="password" id="reg-pass" placeholder="Contraseña" class="form-control mb-3" required>
+            <button type="submit" class="uno btn btn-success w-100 mb-3">Registrarse</button>
+            <button type="button" class="btn btn-secondary w-100" onclick="volverInicio()">Volver</button>
+        </form>
+    </div>
+</div>
+
+    <!-- Dashboard Principal -->
+     <div id="panel-visitas" class="alert alert-success text-center fw-bold" style="display:none;"></div>
+    <section id="pantalla-dashboard" style="display:none;" class="container py-4"><!-- Esto lo agregué para JS-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-success rounded mb-4 px-3">
+            <h3 class="navbar-brand text-white fw-bold">Mi Despensa 🧺</h3><!-- Esto lo cambié -->
+            <div class="ms-auto">
+                <button class="dos btn btn-light me-2" onclick="cambiarTema()">🌙 / ☀️</button>
+                <button class="cuatro btn btn-danger" onclick="cerrarSesion()">Cerrar sesión</button>
+            </div>
+        </nav>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="text-success">Dashboard de Alimentos</h2>
+            <div>
+                <button class="uno btn btn-success me-2" onclick="mostrarFormularioAlimento()">Registrar alimento</button>
+            </div>
+        </div>
+
+        <ul id="listaAlimentos" class="list-group">
+            <li class="list-group-item">No hay alimentos registrados.</li><!-- Esto lo cambié para JS los alimentos predeterminados me causaban conflictos a la hora de editar-->
+        </ul>
+    </section>
+
+    <!-- Ventana Registrar Alimento --><!-- Esto lo agregué para JS-->
+    <div id="pantalla-alimento" style="display:none;" class="overlay">
+        <div class="modal-content">
+            <h3>Registrar nuevo alimento</h3>
+            <form id="form-alimento" onsubmit="guardarAlimento(event)"> 
+                <input type="text" id="nombre-alimento" placeholder="Nombre del alimento" class="form-control mb-3" required>
+                <input type="date" id="fecha" class="form-control mb-3" required>
+                <button type="submit" class="uno btn btn-success w-100 mb-2">Guardar</button>
+                <button type="button" class="btn btn-secondary w-100" onclick="volverDashboard()">Volver</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Formulario de edicion -->
+    <div id="formulario-edicion" style="display:none;" class="overlay">
+        <div class="modal-content">
+            <h3>Editar Alimento</h3>
+            <form onsubmit="guardarCambios(event)">
+                <input type="text" id="editar-nombre" class="form-control mb-3" placeholder="Nombre">
+                <input type="date" id="editar-fecha" class="form-control mb-3">
+                <button class="btn btn-success w-100 mb-2">Guardar cambios</button>
+                <button type="button" class="cuatro btn btn-danger w-100 mb-2" onclick="eliminarActual()">Eliminar</button>
+                <button type="button" class="btn btn-secondary w-100" onclick="volverDashboard()">Volver</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
