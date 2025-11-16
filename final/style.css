@@ -1,0 +1,164 @@
+/* ======== ESTILOS GENERALES ======== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e0f7e9, #a8e6cf);
+    color: #333;
+    padding: 20px;
+    transition: background 0.4s, color 0.4s;
+}
+
+section, div {
+    text-align: center;
+    margin-top: 40px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+/* ======== TARJETAS Y LISTAS ======== */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #ffffff;
+    margin: 10px auto;
+    padding: 12px 18px;
+    border-radius: 12px;
+    max-width: 420px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, background 0.3s;
+}
+
+li:hover {
+    transform: scale(1.02);
+}
+
+/* Colores según vencimiento */
+.vencido {
+    background-color: #f8d7da;
+}
+
+.vigente {
+    background-color: #d4edda;
+}
+
+/* ======== BOTONES PRINCIPALES ======== */
+button {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+/* ✅ Verde principal */
+.uno {
+    background-color: #28a745; /* verde vibrante */
+    color: #fff;
+}
+
+
+/* ✅ Gris neutro (para modo oscuro y cerrar sesión) */
+.dos {
+    background-color: #4a5568; /* gris azulado */
+    color: #fff;
+}
+
+/* ✅ Amarillo y rojo (para editar y eliminar) */
+.cuatro {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* ======== NAV BAR (posición de los botones) ======== */
+nav {
+    display: flex;
+    justify-content: space-between; /* título izquierda, botones derecha */
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.dark-mode nav {
+    background-color: #1e293b;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.05);
+}
+
+/* Espaciado entre los botones del nav */
+nav div {
+    display: flex;
+    gap: 10px;
+}
+/* ======== MODO OSCURO ======== */
+.dark-mode {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #f8f9fa;
+}
+
+.dark-mode li {
+    background: #2d3748;
+    color: #f1f5f9;
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.05);
+}
+
+
+.dark-mode .btn-modo {
+    background-color: #94a3b8;
+    color: #1e293b;
+}
+
+/* ======== FORMULARIOS ======== */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 5px #28a74550;
+}
+
+/* ======== TRANSICIONES ======== */
+* {
+    transition: all 0.3s ease;
+}
+/* ======== BARRA DE NAVEGACIÓN ======== */
+nav {
+    display: flex;
+    justify-content: space-between; /* título izquierda, botones derecha */
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode nav {
+    background-color: #1e293b;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.05);
+}
+
+/* Espaciado entre los botones */
+nav div {
+    display: flex;
+    gap: 10px;
+}
